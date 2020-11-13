@@ -121,7 +121,7 @@ class AppWindow(QMainWindow):
     
     def pushButton_3_Click(self):
         filename = self.ui.lineEdit_2.text()
-        res = np.load(filename)
+        res = np.load(filename, allow_pickle=True)
         
         np_all_img = res['np_all_img']    
         wb_all_img = res['wb_all_img']
@@ -142,7 +142,7 @@ class AppWindow(QMainWindow):
     '''畫原始方法和Woodbury方法RXD的時間和MSE'''
     def pushButton_4_Click(self):
         filename = self.ui.lineEdit_2.text()
-        res = np.load(filename)
+        res = np.load(filename, allow_pickle=True)
         
         '''畫時間圖'''
         np_all_t = res['np_all_t']
